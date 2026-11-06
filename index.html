@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f4ed;
+    color: #4b4238;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.script {
+    font-family: 'Great Vibes', cursive;
+    color: #b28b58;
+}
+
+.subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+/* COVER */
+
+.cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background:
+    linear-gradient(#0007,#0007),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200')
+    center/cover;
+    padding: 20px;
+}
+
+.cover h1 {
+    font-size: clamp(55px, 12vw, 100px);
+}
+
+.open-btn {
+    margin-top: 30px;
+    padding: 13px 30px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+}
+
+/* HERO */
+
+.hero h2 {
+    font-size: 65px;
+}
+
+.flower {
+    font-size: 35px;
+    margin: 20px;
+    color: #b28b58;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    background: #eee6d9;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.time-box {
+    background: white;
+    width: 100px;
+    padding: 20px 10px;
+}
+
+.time-box span {
+    display: block;
+    font-family: 'Cormorant Garamond';
+    font-size: 40px;
+    color: #a17c4c;
+}
+
+/* COUPLE */
+
+.couple-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.person img {
+    width: 190px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 100px 100px 5px 5px;
+}
+
+.person h3 {
+    font-family: 'Cormorant Garamond';
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+/* EVENT */
+
+.event {
+    background: #eee6d9;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    max-width: 700px;
+    margin: 35px auto;
+}
+
+.event-card {
+    background: white;
+    padding: 30px 15px;
+}
+
+.event-card h3 {
+    font-family: 'Cormorant Garamond';
+    font-size: 35px;
+    color: #a17c4c;
+}
+
+.map-btn, .rsvp-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 25px;
+    background: #a17c4c;
+    color: white;
+    text-decoration: none;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+    max-width: 800px;
+    margin: 35px auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* RSVP */
+
+.rsvp {
+    background: #eee6d9;
+}
+
+/* FOOTER */
+
+footer {
+    background: #40372e;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+footer h2 {
+    font-family: 'Great Vibes';
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px) {
+
+    section {
+        padding: 60px 15px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    .couple-grid {
+        gap: 10px;
+    }
+
+    .person img {
+        width: 140px;
+        height: 180px;
+    }
+
+    .person h3 {
+        font-size: 27px;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 180px;
+    }
+
+    .time-box {
+        width: 75px;
+    }
+
+    .time-box span {
+        font-size: 30px;
+    }
+}
+
+#main-content {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- COVER -->
+
+<div class="cover" id="cover">
+
+    <p>THE WEDDING OF</p>
+
+    <h1 class="script">Wedding Day</h1>
+
+    <div class="names">
+        Romeo & Juliet
+    </div>
+
+    <p style="margin-top:20px">
+        SABTU, 16 JANUARI 2027
+    </p>
+
+    <button class="open-btn" onclick="openInvitation()">
+        BUKA UNDANGAN
+    </button>
+
+</div>
+
+<div id="main-content">
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <p class="subtitle">THE WEDDING OF</p>
+
+    <div class="flower">❀</div>
+
+    <h2 class="script">Romeo & Juliet</h2>
+
+    <p>
+        Dengan penuh kebahagiaan,
+        kami mengundang Anda untuk hadir
+        dalam hari istimewa kami.
+    </p>
+
+    <div class="flower">♡</div>
+
+    <p class="subtitle">16 JANUARI 2027</p>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="countdown">
+
+    <p class="subtitle">SAVE THE DATE</p>
+
+    <h2>Counting The Days</h2>
+
+    <p>Menuju hari bahagia kami</p>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            HARI
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            JAM
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            MENIT
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            DETIK
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COUPLE -->
+
+<section>
+
+    <p class="subtitle">THE BRIDE & GROOM</p>
+
+    <h2 class="script">Happy Couple</h2>
+
+    <div class="couple-grid">
+
+        <div class="person">
+
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500">
+
+            <h3>Romeo</h3>
+
+            <p>
+                Putra dari<br>
+                Bapak Nama Ayah<br>
+                & Ibu Nama Ibu
+            </p>
+
+        </div>
+
+        <div class="person">
+
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500">
+
+            <h3>Juliet</h3>
+
+            <p>
+                Putri dari<br>
+                Bapak Nama Ayah<br>
+                & Ibu Nama Ibu
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EVENT -->
+
+<section class="event">
+
+    <p class="subtitle">JOIN OUR SPECIAL DAY</p>
+
+    <h2 class="script">Wedding Event</h2>
+
+    <div class="event-grid">
+
+        <div class="event-card">
+
+            <h3>Akad Nikah</h3>
+
+            <p>
+                Sabtu, 16 Januari 2027<br>
+                Pukul 09.00 WITA
+            </p>
+
+        </div>
+
+        <div class="event-card">
+
+            <h3>Resepsi</h3>
+
+            <p>
+                Sabtu, 16 Januari 2027<br>
+                Pukul 11.00 WITA
+            </p>
+
+        </div>
+
+    </div>
+
+    <a class="map-btn"
+    href="https://maps.google.com"
+    target="_blank">
+        LIHAT LOKASI
+    </a>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+    <p class="subtitle">OUR MEMORIES</p>
+
+    <h2 class="script">Wedding Gallery</h2>
+
+    <div class="gallery-grid">
+
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700">
+
+        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=700">
+
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=700">
+
+        <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=700">
+
+    </div>
+
+</section>
+
+<!-- RSVP -->
+
+<section class="rsvp">
+
+    <p class="subtitle">WILL YOU ATTEND?</p>
+
+    <h2 class="script">RSVP</h2>
+
+    <p>
+        Merupakan suatu kehormatan dan
+        kebahagiaan bagi kami apabila
+        Anda berkenan hadir.
+    </p>
+
+    <a class="rsvp-btn" id="rsvp-button" href="#">
+        KONFIRMASI KEHADIRAN
+    </a>
+
+</section>
+
+<footer>
+
+    <p>THANK YOU FOR YOUR LOVE</p>
+
+    <h2>Romeo & Juliet</h2>
+
+    <p>Made With Love ♡</p>
+
+</footer>
+
+</div>
+
+<script>
+
+// TANGGAL PERNIKAHAN
+// Format: Tahun, Bulan, Tanggal, Jam, Menit, Detik
+// Januari = 0
+
+const weddingDate = new Date(
+    2027, 0, 16, 9, 0, 0
+).getTime();
+
+// NOMOR WHATSAPP
+const whatsappNumber = "6281234567890";
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance <= 0) {
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+        return;
+    }
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (distance / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (distance / 1000) % 60
+    );
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// BUKA UNDANGAN
+
+function openInvitation() {
+
+    document.getElementById("cover").style.display = "none";
+
+    document.getElementById("main-content").style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+// WHATSAPP RSVP
+
+document.getElementById("rsvp-button").href =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(
+        "Halo, saya ingin konfirmasi kehadiran di acara pernikahan Romeo dan Juliet."
+    );
+
+</script>
+
+</body>
+</html>
